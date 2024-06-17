@@ -1,0 +1,200 @@
+﻿<Window x:Class="интерфейс.Okno1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:интерфейс"
+        mc:Ignorable="d"
+        Title="Okno1" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Column -->
+        <Grid Grid.Column="0">
+            <TabControl Background="#FF0072CE" BorderThickness="0">
+                <!-- Add Tab -->
+                <TabItem Header="Добавить" Height="20" VerticalAlignment="Top" Margin="-2,-1,-2,0">
+                    <TabControl>
+                        <!-- Add Airplane Sub-Tab -->
+                        <TabItem Header="Самолет" Margin="-2,0,0,0">
+                            <StackPanel>
+                                <!-- Add Airplane controls here -->
+                                <Button Content="Добавить самолет" Click="AddAirplane_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="model" TextWrapping="Wrap" Text="Модель самолета" Height="45" Margin="3"/>
+                                <TextBox x:Name="flightNumber" TextWrapping="Wrap" Text="Номер рейса" Height="45" Margin="3"/>
+                                <TextBox x:Name="capacity" TextWrapping="Wrap" Text="Кол-во мест" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                        <!-- Add Cargo Airplane Sub-Tab -->
+                        <TabItem Header="Грузовой самолет" Margin="0,0,-2,0">
+                            <StackPanel>
+                                <!-- Add Cargo Airplane controls here -->
+                                <Button x:Name="addGruz" Content="Добавить грузовой самолет" Click="AddCargoAirplane_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="model1" TextWrapping="Wrap" Text="Модель самолета" Height="45" Margin="3"/>
+                                <TextBox x:Name="flightNumber1" TextWrapping="Wrap" Text="Номер рейса" Height="45" Margin="3"/>
+                                <TextBox x:Name="capacity1" TextWrapping="Wrap" Text="Кол-во мест" Height="45" Margin="3"/>
+                                <TextBox x:Name="cargoCapacity" TextWrapping="Wrap" Text="Грузоподъемность" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                        <!-- Add Passenger Sub-Tab -->
+                        <TabItem Header="Пассажир" Height="22" Margin="-2,0,-2,0" VerticalAlignment="Center">
+                            <StackPanel>
+                                <!-- Add Passenger controls here -->
+                                <Button Content="Добавить пассажира" Click="AddPassenger_Click" Height="40" Background="#FFA070"/>
+                                <TextBox x:Name="lastName" TextWrapping="Wrap" Text="Фамилия" Height="45" Margin="3"/>
+                                <TextBox x:Name="firstName" TextWrapping="Wrap" Text="Имя" Height="45" Margin="3"/>
+                                <TextBox x:Name="passportNumber" TextWrapping="Wrap" Text="Номер паспорта" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                </TabItem>
+                <!-- Remove Tab -->
+                <TabItem Header="Удалить" Margin="1,-1,-7,1" Height="20">
+                    <TabControl>
+                        <!-- Remove Airplane Sub-Tab -->
+                        <TabItem Header="Самолет" Margin="-2,0,0,0">
+                            <StackPanel>
+                                <!-- Remove Airplane controls here -->
+                                <Button Content="Удалить самолет" Click="RemoveAirplane_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="RemovePlane" TextWrapping="Wrap" Text="Введите номер рейса удаляемого самолета" Height="45" Margin="3" />
+                            </StackPanel>
+                        </TabItem>
+                        <!-- Remove Cargo Airplane Sub-Tab -->
+                        <TabItem Header="Грузовой самолет" Margin="0,0,-2,0">
+                            <StackPanel>
+                                <!-- Remove Cargo Airplane controls here -->
+                                <Button Content="Удалить грузовой самолет" Click="RemoveCargoAirplane_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="RemoveCargoPlane" TextWrapping="Wrap" Text="Введите номер рейса удаляемого самолета" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                        <!-- Remove Passenger Sub-Tab -->
+                        <TabItem Header="Пассажир" Margin="-2,0,-2,0">
+                            <StackPanel>
+                                <!-- Remove Passenger controls here -->
+                                <Button Content="Удалить пассажира" Click="RemovePassenger_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="RemovePassenger" TextWrapping="Wrap" Text="Введите номер паспорта удаляемого пассажира" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                </TabItem>
+                <!-- Update Tab -->
+                <TabItem Header="Изменить" Margin="6,-1,-12,1">
+                    <TabControl>
+                        <!-- Update Airplane Sub-Tab -->
+                        <TabItem Header="Самолет" Height="22" Margin="-2,0,0,0" VerticalAlignment="Center">
+                            <StackPanel>
+                                <!-- Update Airplane controls here -->
+                                <Button Content="Изменить данные о самолете" Click="UpdateAirplane_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="reiseNum2" TextWrapping="Wrap" Text="Введите номер рейса изменяемого самолета" Height="45" Margin="3" />
+                                <TextBox x:Name="newReiseNum2" TextWrapping="Wrap" Text="Введите новый номер рейса самолета" Height="45" Margin="3"/>
+                                <TextBox x:Name="modelUpdate2" TextWrapping="Wrap" Text="Введите модель самолета" Height="45" Margin="3"/>
+                                <TextBox x:Name="countCapcity2" TextWrapping="Wrap" Text="Введите кол-во мест" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                        <!-- Update Cargo Airplane Sub-Tab -->
+                        <TabItem Header="Грузовой самолет" Margin="0,0,-2,0">
+                            <StackPanel>
+                                <!-- Update Cargo Airplane controls here -->
+                                <Button Content="Изменить данные о грузовом самолете" Click="UpdateCargoAirplane_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="reiseNum1" TextWrapping="Wrap" Text="Введите номер рейса изменяемого самолета" Height="45" Margin="3"/>
+                                <TextBox x:Name="newReiseNum1" TextWrapping="Wrap" Text="Введите новый номер рейса самолета" Height="45" Margin="3"/>
+                                <TextBox x:Name="modelUpdate1" TextWrapping="Wrap" Text="Введите модель самолета" Height="45" Margin="3"/>
+                                <TextBox x:Name="countCapcity1" TextWrapping="Wrap" Text="Введите кол-во мест" Height="45" Margin="3"/>
+                                <TextBox x:Name="Capcity1" TextWrapping="Wrap" Text="Введите грузоподъемность" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                        <!-- Update Passenger Sub-Tab -->
+                        <TabItem Header="Пассажир" Margin="-2,0,-2,0">
+                            <StackPanel>
+                                <!-- Update Passenger controls here -->
+                                <Button Content="Изменить данные о пассажире" Click="UpdatePassenger_Click" Height="40" Margin="3" Background="#FFA070"/>
+                                <TextBox x:Name="passNumber1" TextWrapping="Wrap" Text="Введите номер паспорта изменяемого пассажира" Height="45" Margin="3"/>
+                                <TextBox x:Name="newNumPass1" TextWrapping="Wrap" Text="Введите новый номер паспорта" Height="45" Margin="3"/>
+                                <TextBox x:Name="surename1" TextWrapping="Wrap" Text="Введите фамилию" Height="45" Margin="3"/>
+                                <TextBox x:Name="name1" TextWrapping="Wrap" Text="Введите имя" Height="45" Margin="3"/>
+                            </StackPanel>
+                        </TabItem>
+                    </TabControl>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <!-- Right Column -->
+        <Grid Grid.Column="1">
+            <TabControl Background="#FF0072CE" Margin="0,-1,0,1">
+                <!-- Display Tab -->
+                <TabItem Header="Вывести" Height="20" Margin="-2,0,-2,0">
+                    <TabControl SelectionChanged="TabControl_SelectionChanged" Background="White">
+                        <!-- Display All Airplanes Sub-Tab -->
+                        <TabItem Header="Самолет" Margin="-2,0,0,0" HorizontalAlignment="Left" Height="20" VerticalAlignment="Center" Selector.Selected="ListAirplanes_Click">
+                            <Canvas>
+                                <!-- Airplane image -->
+                                <Image Source="C:\Users\Лев\Downloads\самолет.png" Width="217" Height="185" Canvas.Left="210" Canvas.Top="228" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Image Source="C:\Users\Лев\Downloads\башни.png" Width="259" Height="213" Canvas.Left="363" Canvas.Top="228" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <!-- Display All Airplanes controls here -->
+                                <ListView x:Name="viewPlane" Height="380" Width="590" Background="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Модель" Width="200" DisplayMemberBinding="{Binding Model}" />
+                                            <GridViewColumn Header="Номер рейса" Width="200" DisplayMemberBinding="{Binding FlightNumber}" />
+                                            <GridViewColumn Header="Вместимость" Width="200" DisplayMemberBinding="{Binding Capacity}" />
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </Canvas>
+                        </TabItem>
+
+
+                        <!-- Display All Cargo Airplanes Sub-Tab -->
+                        <!-- Грузовой самолет -->
+                        <TabItem Header="Грузовой самолет" Margin="-2,0,2,0" Height="20" VerticalAlignment="Center" Selector.Selected="ListCargoAirplanes_Click">
+                            <Canvas>
+                                <!-- Airplane image as background -->
+                                <Image Source="C:\Users\Лев\Downloads\самолет.png" Width="217" Height="185" Canvas.Left="210" Canvas.Top="228" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Image Source="C:\Users\Лев\Downloads\башни.png" Width="259" Height="213" Canvas.Left="363" Canvas.Top="228" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <!-- Display All Cargo Airplanes controls here -->
+                                <StackPanel>
+                                    <ListView x:Name="viewCargo" Height="380" Width="590" Background="{x:Null}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Модель" Width="150" DisplayMemberBinding="{Binding Model}" />
+                                                <GridViewColumn Header="Номер рейса" Width="140" DisplayMemberBinding="{Binding FlightNumber}" />
+                                                <GridViewColumn Header="Вместимость" Width="150" DisplayMemberBinding="{Binding Capacity}" />
+                                                <GridViewColumn Header="Грузоподъемность" Width="150" DisplayMemberBinding="{Binding CargoCapacity}" />
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </StackPanel>
+                            </Canvas>
+                        </TabItem>
+
+                        <!-- Вкладка Пассажир -->
+                        <TabItem Header="Пассажир" Margin="-2,0,0,0" HorizontalAlignment="Left" Width="71" Selector.Selected="ListPassengers_Click">
+                            <Canvas>
+                                <!-- Airplane image as background -->
+                                <Image Source="C:\Users\Лев\Downloads\самолет.png" Width="217" Height="185" Canvas.Left="210" Canvas.Top="228" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Image Source="C:\Users\Лев\Downloads\башни.png" Width="259" Height="213" Canvas.Left="363" Canvas.Top="228" Stretch="Uniform" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                                <!-- Display All Passengers controls here -->
+                                <StackPanel>
+                                    <ListView x:Name="viewPassenger" Height="380" Width="590" Background="{x:Null}">
+                                        <ListView.View>
+                                            <GridView>
+                                                <GridViewColumn Header="Фамилия" Width="200" DisplayMemberBinding="{Binding LastNameModel}" />
+                                                <GridViewColumn Header="Имя" Width="200" DisplayMemberBinding="{Binding FirstNameModel}" />
+                                                <GridViewColumn Header="Номер паспорта" Width="200" DisplayMemberBinding="{Binding PassportNameModel}" />
+                                            </GridView>
+                                        </ListView.View>
+                                    </ListView>
+                                </StackPanel>
+                            </Canvas>
+                        </TabItem>
+
+                    </TabControl>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>
